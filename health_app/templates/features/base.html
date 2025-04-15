@@ -1,0 +1,141 @@
+{% load static %}
+{%  include 'features/navbar.html' %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
+    crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+  <link href="https://fonts.google.com/specimen/Playfair+Display" rel="stylesheet">
+</head>
+<body>
+
+  <h1 class="title">{% block title %}{% endblock %}</h1>
+  <hr>
+
+  {% block content %}
+  {% endblock %}
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+  {% block script %}
+  {% endblock %}
+</body>
+</html>
+
+<style>
+  .body{
+    /* font-family: Georgia, 'Times New Roman', Times, serif; */
+    font-family: 'Playfair Display';
+    background-color: #c98895ff;
+    color: #eeeeee;
+  }
+    .left {
+    float: left;
+  }
+  
+  .right {
+    float: right;
+  }
+  
+  .btn {
+    outline: none;
+    color: #eeeeee;
+    background-color: transparent;
+    font-family: 'Playfair Display';
+    box-shadow: 0 0 0 0;
+    margin-right: 3px;
+  }
+  
+  .clearfix {
+    margin: 15px;
+  }
+  
+  .form {
+    margin: auto;
+    font-family: 'Playfair Display';
+  }
+  
+  .form input, .form select, .form textarea {
+    border-radius: 5px;
+    border: 1px solid #eeeeee;
+    outline: none;
+    background: none;
+    padding: 5px;
+    width: 100%;
+  }
+  
+  /* App styles */
+  .title {
+    text-align: center;
+    font-family: 'Playfair Display';
+    margin: 10px;
+  }
+  
+  .calendar {
+    width: 98%;
+    margin: auto;
+    font-family: 'Playfair Display';
+    font-size: 13px;
+    padding-top: 30px;
+  }
+  
+  .calendar tr, .calendar td {
+    border: 1px solid #eeeeee;
+    color: #eeeeee;
+  }
+  
+  .calendar th {
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Playfair Display';
+    color: #eeeeee;
+  }
+  
+  .calendar td {
+    width: 200px;
+    height: 150px;
+    padding: 20px 0px 0px 5px;
+    font-family: 'Playfair Display';
+    color: #eeeeee;
+  }
+  
+  .month {
+    font-size: 25px;
+    font-family: 'Playfair Display';
+    color: #eeeeee;
+  }
+  
+  .date {
+    font-size: 16px;
+    font-family: 'Playfair Display';
+    color: #eeeeee;
+  }
+  
+  ul {
+    height: 100%;
+    padding: 0px 5px 0px 20px;
+    font-family: 'Playfair Display';
+  }
+  
+  a {
+    color: #eeeeee;
+    font-family: 'Playfair Display';
+    font-size: 15px;
+  }
+  </style>

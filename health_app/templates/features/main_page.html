@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+	body,
+	html{
+		font-family: 'Tajawal', sans-serif;
+	}
+	.body1{
+		background: #c98895ff !important;
+	}
+</style>
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+</head>
+<body class=" body1">
+{%  include 'features/navbar.html' %}
+	{% block content %}
+
+
+
+	{% endblock %}
+
+</body>
+</html>

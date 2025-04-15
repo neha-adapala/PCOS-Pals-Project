@@ -1,0 +1,63 @@
+{% load static %}
+<link href="https://fonts.google.com/specimen/Playfair+Display" rel="stylesheet">
+<style>
+    .hello-msg{
+        font-size: 18px;
+        color: #b66878;
+        margin-right: 20px;
+        font-family: 'Playfair Display';
+    }
+    .table-condensed{
+        font-size: 12px;
+    }
+    .btn-condensed{
+        font-size: 12px;
+    }
+    .image1{
+        padding-right:15px;
+    }
+    .navigate{
+        background: #eeeeee !important;
+        color: #b66878;
+    }
+    ul {
+        height: 100%;
+        padding: 0px 5px 0px 20px;
+        font-family: 'Playfair Display';
+    }
+
+
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-dark navigate ">
+  <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon "></span>
+  </button>
+  <div class="collapse navbar-collapse " id="navbarNav" style="color:#b66878;">
+    <ul class="navbar-nav mr-auto ">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'about_us' %}" style="color:#b66878;">ABOUT US</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'info' %}" style="color:#b66878;">INFO</a>
+      </li>
+      <li class="nav-item" >
+        <a class="nav-link" href="{% url 'home' %}" style="color:#b66878;" >FORUM</a>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" href="{% url 'points' %}" style="color:#b66878;">POINTS</a>
+      </li> -->
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'calendar' %}" style="color:#b66878;">TRACKER</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'quiz' %}" style="color:#b66878;">QUIZ</a>
+      </li>
+    </ul>
+  </div>
+
+  <span class="hello-msg">Hello, {{request.user}}</span>
+  <span ><a  class="hello-msg" href="{% url 'logout' %}">Logout</a></span>
+
+</nav>
+

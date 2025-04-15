@@ -1,0 +1,103 @@
+{% extends 'features/main_page.html' %}
+{% load static %}
+{% block content %}
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"0>
+
+<head>
+	<title>
+		Quiz
+	</title>
+</head>
+<style>
+	ul {
+		height: 100%;
+		padding: 0px 5px 0px 20px;
+		font-family: 'Playfair Display';
+	}
+</style>
+<body>
+	
+    <div>
+    <h1 style="font-size:100px; margin-top:50px; font-family: 'Playfair Display'; text-align: center; color: #eee;">
+		Quiz
+	</h1>
+	<!-- <div class="card box container" style="border-radius: 20px; border:none; background-color: #eeeeeeff; padding: 30px 50px; margin-top:50px; width:900px; color:#595959;"></div> -->
+		<div  style="font-size:20px; font-family: 'Playfair Display'; border-radius: 20px; border:none; background-color: #eeeeeeff; padding: 30px 50px; margin-top:50px; width:900px; color:#595959;justify-content: center; margin:auto;">
+		Do you have irregular periods/ no periods at all? <br>
+		<input type="radio" name="periods" value="Yes" style="margin-left:30px;">Yes<br>
+		<input type="radio" name="periods" value="No" style="margin-left:30px;">No<br>
+		<br>
+		Do you have excessive hair growth? (often on the face, chest or back) <br>
+		<input type="radio" name="excess_hair" value="Yes" style="margin-left:30px;">Yes<br>
+		<input type="radio" name="excess_hair" value="No" style="margin-left:30px;">No<br>
+		<br>
+		Do you have thinning hair or are experiencing hair loss? <br>
+		<input type="radio" name="thin_hair" value="Yes" style="margin-left:30px;">Yes<br>
+		<input type="radio" name="thin_hair" value="No" style="margin-left:30px;">No<br>
+		<br>
+		Do you have severe acne? <br>
+		<input type="radio" name="acne" value="Yes" style="margin-left:30px;">Yes<br>
+		<input type="radio" name="acne" value="No" style="margin-left:30px;">No<br>
+		<br>
+		Do you have oily skin? <br>
+		<input type="radio" name="oily_skin" value="Yes" style="margin-left:30px;">Yes<br>
+		<input type="radio" name="oily_skin" value="No" style="margin-left:30px;">No<br>
+		<br>
+		Do you have darkening skin? <br>
+		<input type="radio" name="dark_skin" value="Yes" style="margin-left:30px;">Yes<br>
+		<input type="radio" name="dark_skin" value="No" style="margin-left:30px;">No<br>
+		<br>
+		Do you have difficulty losing weight or have experienced weight gain? <br>
+		<input type="radio" name="weight" value="Yes" style="margin-left:30px;">Yes<br>
+		<input type="radio" name="weight" value="No" style="margin-left:30px;">No<br>
+		<br>
+		<!-- </div> -->
+
+		<button type="button" onclick="displayRadioValue()" class="btn btn-light right" style="font-family: 'Playfair Display';border: none; margin-left: 30px; font-size: 30px; padding-inline: 30px; background-color: #c98895ff; color: #eeeeee">
+			Submit
+		</button>
+		<div style="padding-bottom: 50px;"></div>
+		<br>
+		<div id="result"></div>
+		<script>
+			function displayRadioValue() {
+				var score = 0;
+				document.getElementById("result").innerHTML = "";
+				var inputs = document.getElementsByTagName('input');
+				for (i = 0; i < inputs.length; i++) {
+					if (inputs[i].type = "radio") {
+
+						if (inputs[i].checked)
+						// document.getElementById("result").innerHTML
+						// 	+= inputs[i].name + " Value: "
+						// 	+ inputs[i].value + "<br>";
+							if (inputs[i].value == "Yes"){
+								score = score + 1;
+							}
+							
+					}
+				}
+				
+				if (score==0){
+					document.getElementById("result").innerHTML += "Your score is " + score + ". It is unlikely that you have PCOS. If you still have doubts, please speak to your local GP.";
+				}
+				else if (score<=2){
+					document.getElementById("result").innerHTML += "Your score is " + score + ". It is possible, but unlikely that you have PCOS. If you have doubts, please speak to your local GP.";
+				}
+				else if (score<=4){
+					document.getElementById("result").innerHTML += "Your score is " + score + ". It is likely that you have PCOS. Please speak to your local GP.";
+				}
+				else if (score<=7){
+					document.getElementById("result").innerHTML += "Your score is " + score + ". It is very likely that you have PCOS. Please speak to your local GP.s";
+				}
+			}
+		</script>
+		</div>
+		</div>
+	</div>
+</body>
+</html>
+{% endblock %}

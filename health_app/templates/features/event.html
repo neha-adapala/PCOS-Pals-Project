@@ -1,0 +1,72 @@
+{% extends 'features/base.html' %}
+
+{% block title %}
+Event
+{% endblock %}
+
+{% block content %}
+
+<style>
+    form{
+        border:4px solid #eeeeee;
+        margin: 0 auto;
+        padding: 30px;
+        margin-top: 40px;
+        width: fit-content;
+        background-color: none;
+        color:#eeeeee;
+    }
+    .body1{
+        background: #c98895ff !important;
+        font-family: 'Playfair Display';
+    }
+</style>
+<body class="body1">
+<div class="total">
+<div class="clearfix">
+  <a class="btn btn-light left" href="{% url 'calendar' %}"> Tracker </a>
+</div>
+
+{% if form.errors %}
+    {% for field in form %}
+        {% for error in field.errors %}
+            <div class="alert alert-danger">
+                {{ field.label }} <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+    {% endfor %}
+    {% for error in form.non_field_errors %}
+        <div class="alert alert-danger">
+            {{ field.label }} <strong>{{ error|escape }}</strong>
+        </div>
+    {% endfor %}
+{% endif %}
+
+<form action="" method="POST">
+  {% csrf_token %}
+  <table class="form form-table">
+    <div class="form-group col-md-6">
+        <label for="title">Title</label><br>
+        {{ event_form.title }}
+    </div>
+    <div class="form-group col-md-6">
+        <label for="description">Description</label><br>
+        {{ event_form.description }}
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group col-md-6">
+        <label for="startTime">Start Time</label><br>
+        {{ event_form.start_time }}
+    </div>
+    <!-- <div class="form-group col-md-6">
+        <label for="endTime">End Time</label><br>
+        {{ event_form.end_time }}
+    </div> -->
+</div>
+    <tr><td colspan="2"><button type="submit" class="btn btn-info right"> Submit </button></td></tr>
+  </table>
+</form>
+</div>
+</body>
+{% endblock %}

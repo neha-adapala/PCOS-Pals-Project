@@ -1,0 +1,161 @@
+{%  extends 'features/main_page.html' %}
+{% load static %}
+{% block content %}
+
+<meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Raleway&family=Tajawal&display=swap" rel="stylesheet">
+            <link href="https://fonts.google.com/specimen/Poppins" rel="stylesheet">
+            <link href="https://fonts.google.com/specimen/Playfair+Display" rel="stylesheet">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"0>
+
+<style>
+    .indented{
+        margin-left: 20px;
+    }
+    .indented2{
+        margin-left: 40px;
+    }
+    .card {
+        /* Add shadows to create the "card" effect */
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        align-items: centre;
+        padding-left: 300px;
+        padding-right: 300px;
+        background-color: pink;
+    }
+
+    /* On mouse-over, add a deeper shadow */
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);   
+    }
+
+    /* Add some padding inside the card container */
+    .container {
+        padding: 2px 16px;
+    }
+
+    ul {
+        height: 100%;
+        padding: 0px 5px 0px 20px;
+        font-family: 'Playfair Display';
+    }
+</style>
+
+<body>
+    <h1 style="font-size:100px; margin-top:50px; font-family: 'Playfair Display'; text-align: center; color: #eee;">
+		Information
+	</h1>
+    <!-- <div class="card"> -->
+    <div class="card box container" style="border-radius: 20px; font-family: 'Playfair Display'; border:none; background-color: #eeeeeeff; padding: 30px 50px; margin-top:50px; width:900px; color:#595959;">
+        <!-- <div class="container"> -->
+            <p>PCOS stands for polycystic ovarian syndrome.</p><br>
+
+            <p>It is a condition that affects 1 in 8 women in the UK! Thinking about the amount of people you know - you probably know quite a few people who may have PCOS.</p> <br>
+
+            <p>It is a common health problem that is a result of an imbalance of reproductive hormones, which in turn creates problems in the ovaries, which leads to problems in the entire body.</p><br>
+
+            <p>The ovaries are important for women since the egg released each month as part of a healthy menstrual cycle is created there. Due to PCOS, the egg may not develop healthily or it may not be released during ovulation as normal.</p><br>
+            <br>
+            <b>SYMPTOMS:</b> <br>
+            <ul>
+            <li>Irregular menstrual cycle</li>
+            <li class="indented">Women with PCOS may miss periods or have fewer periods (fewer than eight in a year). Or, their periods may come every 21 days or more often. Some women with PCOS stop having menstrual periods</li>
+            <li class="indented">Irregular periods can lead to:</li>
+            <li class="indented2">Infertility, which is the inability to get pregnant. In fact, PCOS is one of the most common causes of infertility in women (but it is not impossible for women with PCOS to have children).</li>
+            <li class="indented2">Development of cysts, which are essentially small, fluid-filled sacs in the ovaries</li>
+            <li>Hirsutism</li>
+            <li class="indented">Hirsutism, despite its scary looking name, is the condition where you have too much hair on your face, chin, or parts of the body where men usually find that they have hair</li>
+            <li class="indented">Hirsutism affects up to 70% of women with PCOS.</li>
+            <li>Acne on the face, chest, and upper back</li>
+            <li>Thinning hair/ hair loss on the scalp</li>
+            <li>Finding it difficult to lose weight or gaining weight</li>
+            <li>Darkening of skin</li>
+            <li class="indented">This is often found in the groin, underneath breasts and/or along neck creases </li>
+            <li>Skin tags, which are small excess bits of skin in the armpits or neck area</li>
+            </ul> <br>
+
+            <p>Most women are diagnosed with PCOS in their 20s - 30s, which is when they find it more difficult to get pregnant so they go see their doctor. However, PCOS can affect you at any age after puberty. Every woman is at risk of PCOS. The level of these risks change greatly, for example, you risk of PCOS may be higher if you have obesity or if you have a mother, sister, or aunt with PCOS.</p><br>
+
+            
+            <b>CAUSES OF PCOS:</b><br>
+            <ul>
+            <li>The exact causes of PCOS have not been discovered yet, but researches presume that it is due to…</li>
+            <li>Genetics - ~20-40% of women diagnosed with PCOS have a family member (often mother/ sister) who also have PCOS</li>
+            <li>High levels of androgens, which are sometimes referred to as "male hormones," despite the fact that all women make small amounts of androgens. </li>
+            <li class="indented">Androgens control the development of male trait (e.g. baldness found in places often found in males). Women with PCOS have more androgens than normal and this could:</li>
+            <li class="indented2">Prevent the ovaries from releasing an egg during each menstrual cycle</li>
+            <li class="indented2">Cause extra hair growth</li>
+            <li class="indented2">Cause extra acne</li>
+            <li>High levels of insulin</li>
+            <li class="indented">Insulin is a hormone that helps blood sugar from your food enter the body's cells so it can be used for energy. Insulin resistance is when the body's cells do not respond as they should to insulin. Consequently, your insulin blood levels become higher than normal. Type 2 diabetes develops when the pancreas is no longer able to make the large amounts of insulin required to keep blood sugar at a healthy level after meals.</li>
+            <li class="indented">Many women with PCOS have insulin resistance, more often those who are overweight or obese, have unhealthy eating habits, do not get enough physical activity, and have a family history of diabetes (often type 2 diabetes).</li>
+            </ul> <br>
+
+            <b>PREGNANCY:</b> <br>
+            <p>Having PCOS just makes pregnancy harder, not impossible. PCOS is a very common cause of infertility in women, but can be treated. In women with PCOS, the hormonal imbalance interferes with the growth and release of eggs from the ovaries (ovulation). If you don't ovulate, you can't get pregnant. I would suggest speaking to your doctor if you are planning to get pregnant with PCOS.</p><br>
+
+
+
+
+            <b>LINKS BETWEEN PCOS AND OTHER HEALTH PROBLEMS:</b> <br>
+            <ul>
+            <li>Diabetes.</li>
+            <li class="indented">More than 1 in 2 women with PCOS will have either diabetes or prediabetes before they turn 40. </li>
+            <li class="indented">The complications linked to diabetes include heart disease, chronic kidney disease, nerve damage, and other problems such as feet problems, oral health, vision loss, decreased hearing, and mental health issues.</li>
+            <li>High blood pressure</li>
+            <li class="indented">Those with PCOS are at greater risk of having high blood pressure compared with women of the same age without PCOS. </li>
+            <li class="indented">Heart disease and stroke is most often caused by high blood pressure. </li>
+            <li>Unhealthy cholesterol. </li>
+            <li class="indented"> Women with PCOS usually have higher levels of LDL (bad) cholesterol and low levels of HDL (good) cholesterol. </li>
+            <li class="indented">High cholesterol means you can develop fatty deposits in your blood vessels. Over time, these fatty deposits will grow even more, making it really difficult for enough blood to flow through your arteries. Sometimes, those deposits can suddenly break, forming a clot that causes a heart attack or stroke</li>
+            <li>Sleep apnea. </li>
+            <li class="indented">Sleep apnea is when your breathing stops and starts while you sleep. Many women with PCOS are overweight or obese. Fat deposits from obesity in the tissues surrounding the upper airway can result in a smaller path for the air to go through. This means it will be harder to breathe, which can cause sleep apnea. </li>
+            <li>Depression and anxiety	</li>
+            <li class="indented">Depression and anxiety are shockingly common among women with PCOS.</li>
+            <li>Endometrial cancer</li>
+            <li class="indented">Problems with ovulation, obesity, insulin resistance, and diabetes, which are all common in women with PCOS, increase the risk of developing cancer in the lining of the uterus or womb.</li>
+            </ul> <br>
+            
+            <p>Researchers are not sure if PCOS causes some of these problems, or vice versa, but they do know that there are strong links between PCOS and these symptoms.</p> <br>
+            <p>Some risks of PCOS-related health problems increase with age as well, so mitigation is absolutely necessary.</p><br>
+            
+
+            <b>TESTS FOR PCOS:</b><br>
+            
+            To help diagnose PCOS and rule out other causes of your symptoms, your doctor may talk to you about your medical history and do a physical exam and different tests:<br>
+            <ul>
+            <li>Physical exam. </li>
+            <li class="indented">Measured: blood pressure, body mass index (BMI), and waist size. </li>
+            <li class="indented">Look for: skin for extra hair on your face, chest or back, acne, or skin discoloration, hair loss or signs of other health conditions (e.g. an enlarged thyroid gland).</li>
+            <li>Pelvic exam</li>
+            <li class="indented">You may have to go through a pelvic exam for signs of extra male hormones (e.g. an enlarged clitoris) and check to see if your ovaries are enlarged or swollen, suggesting that they may have cysts in them.</li>
+            <li>Pelvic ultrasound (sonogram). </li>
+            <li class="indented">This test uses sound waves to examine your ovaries for cysts and check the endometrium, which is essentially the lining of the uterus or womb.</li>
+            <li>Blood tests. </li>
+            <li class="indented">Blood tests are done to check your androgen hormone levels, sometimes called "male hormones." Other tests will be done to check if you have any other diseases.</li>
+            </ul> <br>
+
+            <b>TO BE DIAGNOSED FOR PCOS:</b><br>
+            <ul>
+            <li>Irregular periods</li>
+            <li>Higher than normal blood levels of androgens</li>
+            <li>Multiple cysts on one or both ovaries</li>
+            </ul> <br>
+
+            <b>MANAGING PCOS:</b><br>
+
+
+            There is no cure for PCOS, but you can manage the symptoms of PCOS. It is best to talk to your doctor about this, but there is also lots of information online to reduce the symptoms. <br>
+        <!-- </div> -->
+    </div>
+
+</body>
+
+{% endblock %}

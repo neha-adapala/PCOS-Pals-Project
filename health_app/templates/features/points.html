@@ -1,0 +1,28 @@
+{%  extends 'features/main_page.html' %}
+{% load static %}
+{% block content %}
+
+<div>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"0>
+            <style>
+                .box{
+                    border: 4px solid black;
+                    margin: 0 auto;
+                }
+            </style>
+        </head>
+        <body>
+
+                <h2 class="jumbotron">
+                    TOTAL FORUMS: {{count}}
+                </h2>
+
+        <p >Wow! We have helped at least {{count}} people in their journey with PCOS. Thank you so much to everyone! I can't believehow supportive everyone is</p>
+
+        </body>
+</div>
+
+{% endblock %}

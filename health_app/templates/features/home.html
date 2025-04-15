@@ -1,0 +1,135 @@
+{%  extends 'features/main_page.html' %}
+{% load static %}
+{% block content %}
+<style>
+body {
+  font-family: "Lato", sans-serif;
+  color: #595959;
+}
+
+.sidenav {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #b66878ff;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #b66878ff;
+}
+
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+<div>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Raleway&family=Tajawal&display=swap" rel="stylesheet">
+            <link href="https://fonts.google.com/specimen/Poppins" rel="stylesheet">
+            <link href="https://fonts.google.com/specimen/Playfair+Display" rel="stylesheet">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"0>
+            <style>
+                .box{
+                    border: 4px solid black;
+                    margin: 0 auto;
+                }
+            </style>
+        </head>
+        <body style="font-family:Georgia, 'Times New Roman', Times, serif;">
+
+                    <h1 style="text-align: center; padding-top: 50px; font-family:'Playfair Display'; color: #eeeeee; font-size: 100px;"><b>FORUM</b></h1>
+                    <form method="POST" action="{% url 'addInForum' %}">
+                        {% csrf_token %}
+                    <button class="btn btn-info float-right" style="width:fit-content; padding-top: 4px; background-color:#eeeeeeff; border: none; font-family:'Playfair Display'; color: #595959; margin-right: 300px; ">Add forum</button>
+                    </form>
+                    <div class="card-columns" style="padding: 10px; margin: 20px;"></div>
+
+
+
+                    {%for forum in forums %}
+
+                        <div class="card box container" style="border-radius: 20px; border:none; background-color: #eeeeeeff; padding: 20px 40px;">
+                            <br>
+                            
+                            <h5 class="card-title">
+                                <h3 style="color:#595959; padding-left: 20px">{{forum.title}}</h3>
+                                <div class="card-body container">
+                                        <p style="color:#595959; padding-left: 0px;">{{forum.description}}</p>
+                            </h5>
+                                    <hr>
+                                    <p> By: {{forum.user_id}}</p>
+                                    <hr>
+
+                                    <button onclick="toggle('{{forum.id}}')" style="background-color:#b66878ff; margin-bottom: 20px; color:#eeeeee; border-radius: 10px; border: none;">Hide/show the discussion</button>
+                                    <div style="display:none;" id='{{forum.id}}'>
+                                    <h4><b>Views from other users</b></h4>
+                                    {%for discuss in discussions%}
+                                    
+                                    {%for objs in discuss%}
+                                    
+                                    {% if objs.forum == forum %}
+                                      <hr>
+                                      <p style="color:#595959;"><i> By: {{objs.user_id}}</i></p>
+                                       {{objs.discuss}}
+                                    
+                                       <br>
+                                    {% endif %}
+                                    {%endfor%}
+                                    {%endfor%}
+                                    <hr>
+                                    <form method="POST" action="{% url 'addInDiscussion' %}">
+                                        {% csrf_token %}
+                                    <button class="btn btn-success" style="width:fit-content; padding: 4px; margin:10px; background-color:#b66878ff ; color: #eeeeee; border: none; font-family:'Playfair Display'">Add Responses</button>
+                                    </div>
+                                    </form>
+                                </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+
+
+                    {%endfor%}
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        </body>
+</div>
+<script>
+    function toggle(forum_id) {
+      var x = document.getElementById(forum_id);
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+    </script>
+{% endblock %}
